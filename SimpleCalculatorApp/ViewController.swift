@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var firstNum : String = ""
     var operation : String = ""
     var secondNum : String = ""
-    var haveResult : Bool = false
+    var havePoint : Bool = false
     
     var resultNum : String = ""
     var resultView : String = " = "
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         firstNum = ""
         operation  = ""
         secondNum  = ""
-        haveResult  = false
+        havePoint  = false
         resultNum  = ""
         resultView = " = "
         afterResultNum  = ""
@@ -63,6 +63,17 @@ class ViewController: UIViewController {
         print("operation \(operation) , firstNum \(firstNum),  secondNum \(secondNum)  resultNum \(resultNum)  ")
     }
     
+    @IBAction func btnFunc(_ sender: Any) {
+        print("operation: \(operation) , firstNum: \(firstNum)  secondNum: \(secondNum)  resultNum: \(resultNum) havePoint: \(havePoint) ")
+    }
+    @IBAction func btnPoint(_ sender: Any) {
+        if lblCalculator.text == "" && havePoint == false{
+            firstNum = "0"
+            havePoint = true
+        }else{
+            
+        }
+    }
     @IBAction func numPressed(_ sender: UIButton) {
         
         if  operation == ""{
@@ -188,7 +199,7 @@ class ViewController: UIViewController {
         {
             if firstNum != "" && secondNum != ""
             {
-                haveResult = true
+                
                 return Double(firstNum)! * Double(secondNum)!
              }
             else
@@ -212,7 +223,7 @@ class ViewController: UIViewController {
         {
             if firstNum != "" && secondNum != ""
             {
-                haveResult = true
+               
                 return Double(firstNum)! / Double(secondNum)!*100
              }
             else
